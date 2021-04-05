@@ -1,16 +1,12 @@
 package io.nextgen.technologies.courseapi;
 
-
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
 public class TopicService {
-	@Autowired
-	private TopicRepository topicRepository;
-	
+	@Autowired private TopicRepository topicRepository;
 	public List<Topic> getTopics()
 	{
 		return topicRepository.findAll();
@@ -21,7 +17,7 @@ public class TopicService {
 	}
 	public void addTopics(Topic t)
 	{
-		 topicRepository.save(t);
+		topicRepository.save(t);
 	}
 	public void updateTopic(Topic t)
 	{

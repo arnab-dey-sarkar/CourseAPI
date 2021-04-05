@@ -12,8 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TopicController {
 	
-	@Autowired
-	TopicService topicService;
+	@Autowired TopicService topicService;
 	@RequestMapping("/topics")
 	public List<Topic> getTopics()
 	{

@@ -2,7 +2,6 @@ package io.nextgen.technologies.courseapi;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
 public class Topic {
