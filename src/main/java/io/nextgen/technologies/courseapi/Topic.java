@@ -19,7 +19,6 @@ public class Topic {
 		this.name = name;
 		this.description = description;
 	}
-	
 	public String getId() {
 		return id;
 	}
@@ -38,6 +37,4 @@ public class Topic {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-
 }
