@@ -1,4 +1,4 @@
-package io.nextgen.technologies.courseapi;
+package io.nextgen.technologies.topic;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

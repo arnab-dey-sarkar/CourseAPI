@@ -1,4 +1,4 @@
-package io.nextgen.technologies.courseapi;
+package io.nextgen.technologies.topic;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;

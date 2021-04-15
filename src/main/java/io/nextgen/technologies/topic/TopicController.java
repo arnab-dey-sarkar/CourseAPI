@@ -1,4 +1,4 @@
-package io.nextgen.technologies.courseapi;
+package io.nextgen.technologies.topic;
 
 
 import java.util.List;
@@ -12,7 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TopicController {
 	
-	@Autowired TopicService topicService;
+	@Autowired
+    TopicService topicService;
 	@RequestMapping("/topics")
 	public List<Topic> getTopics()
 	{
