@@ -1,8 +1,5 @@
 package io.nextgen.technologies.course;
 
-
-import io.nextgen.technologies.course.Course;
-import io.nextgen.technologies.course.CourseService;
 import io.nextgen.technologies.topic.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

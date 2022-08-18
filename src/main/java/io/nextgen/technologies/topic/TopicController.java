@@ -3,11 +3,10 @@ package io.nextgen.technologies.topic;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 @RestController
 public class TopicController {
@@ -15,14 +14,20 @@ public class TopicController {
 	@Autowired
     TopicService topicService;
 	@RequestMapping("/topics")
-	public List<Topic> getTopics()
+	public ResponseEntity<List<Topic>> getTopics()
 	{
-		return topicService.getTopics();
+		List<Topic> topicList=topicService.getTopics();
+		return new ResponseEntity<>(topicList,HttpStatus.ACCEPTED);
 	}
 	@RequestMapping("/topics/{id}")
 	public Topic getTopic(@PathVariable String id)
 	{
-		return topicService.getTopic(id);
+		try {
+			return topicService.getTopic(id);
+		}catch (Exception e)
+		{
+			throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR,"Error In Retrieving Data",e);
+		}
 		
 	}
 	@RequestMapping(method=RequestMethod.POST,value="/topics")
